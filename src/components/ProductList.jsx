@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import Product from './Product'
+import {storeProducts} from '../data'
 class ProductList extends Component {
     render(){
         return(
-            <div>
-                <Product />
-            </div>
+            <React.Fragment>
+                <div className="py-5">
+                    <div className="container">
+                        {storeProducts.map(product => <Product product={product} /> )}
+                    </div>
+                </div>
+            </React.Fragment>
         )
     }
 }
