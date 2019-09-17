@@ -11,15 +11,15 @@ import Cart from './components/Cart'
 
 function App() {
   return (
-    <React.Fragment>
-      <Navbar />
-      <Switch>
-        <Route path='/' exact component={ProductList}/>
-        <Route path='/details' component = {Details} />
-        <Route path='/cart' component = {Cart} />
-        <Route component = {Default} />
-      </Switch>
-  </React.Fragment>
+        <React.Fragment>
+          <Navbar />
+            <Switch>
+              <Route path='/' exact component={ProductList}/>
+              <Route path='/details' component = {Details} />
+              <Route path='/cart' component = {Cart} />
+              <Route component = {Default} />
+            </Switch>
+      </React.Fragment>
   );
 }
 

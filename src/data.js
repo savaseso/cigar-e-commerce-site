@@ -39,7 +39,7 @@ export const storeProducts = [
   },
   {
     id: 4,
-    title: "2 Boxes Cohiba Robusto New Bands",
+    title: "2 Boxes Cohiba Robusto",
     img: "img/4.jpg",
     price: 600,
     company: "Cohiba",
