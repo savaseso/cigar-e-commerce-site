@@ -20,8 +20,11 @@ export class Provider extends Component {
         })
         this.setState({products:tempProducts})
     }
+    getItem = (id) => this.state.products.find(item => item.id === id);
+
     handleDetail = (id) => {
-        console.log('hello from detail',id)
+        const product = this.getItem(id);
+        this.setState({detailProduct:product})
     }
     addToCart = (id) => {
         console.log(`add to cart${id}`)
