@@ -23,8 +23,8 @@ export class Provider extends Component {
     handleDetail = (id) => {
         console.log('hello from detail',id)
     }
-    addToCart = () => {
-        console.log('hello from addToCArt')
+    addToCart = (id) => {
+        console.log(`add to cart${id}`)
     }
     
     render(){
