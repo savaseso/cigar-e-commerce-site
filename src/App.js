@@ -7,7 +7,7 @@ import Navbar from './components/Navbar'
 import ProductList from './components/ProductList'
 import Details from './components/Details'
 import Default from './components/Default'
-import Cart from './components/Cart'
+import Cart from './components/cart/Cart'
 import Modal from './components/Modal'
 
 function App() {

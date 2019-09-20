@@ -8,8 +8,11 @@ export class Provider extends Component {
         products:[],
         detailProduct,
         cart:[],
-        modalOpen:true,
-        modalProduct:detailProduct
+        modalOpen:false,
+        modalProduct:detailProduct,
+        cartSubtotal:0,
+        cartTax:0,
+        cartTotal:0
     }
     componentDidMount(){
         this.setProducts();
@@ -46,16 +49,31 @@ export class Provider extends Component {
     closeModal = () => {
         this.setState({modalOpen:false})
     }
+    increment = (id) => {
+        console.log('increment method')
+    }
+    decrement = (id) => {
+        console.log('decrement method')
+    }
+    removeItem = (id) => {
+        console.log('remove method')
+    }
+    clearCart = () => {
+        console.log('clear method')
+    }
     
     render(){
-
         return(
           <Context.Provider value={{
               ...this.state,
               handleDetail:this.handleDetail,
               addToCart:this.addToCart,
-              modalOpen:this.openModal,
-              closeModal:this.closeModal
+              openModal:this.openModal,
+              closeModal:this.closeModal,
+              increment:this.increment,
+              decrement:this.decrement,
+              removeItem:this.removeItem,
+              clearCart:this.clearCart
               }}>
               {this.props.children}
           </Context.Provider>
