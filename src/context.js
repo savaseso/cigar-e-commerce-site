@@ -7,7 +7,7 @@ export class Provider extends Component {
     state = {
         products:[],
         detailProduct,
-        cart:storeProducts,
+        cart:[],
         modalOpen:false,
         modalProduct:detailProduct,
         cartSubtotal:0,
@@ -50,19 +50,22 @@ export class Provider extends Component {
         this.setState({modalOpen:false})
     }
     increment = (id) => {
-        console.log('increment method',id)
+       const product =  this.state.cart.find(item => item.id === id)
+       this.setState({cartSubtotal:this.state.cartSubTotal+product.price})
     }
     decrement = (id) => {
         console.log('decrement method',id)
     }
     removeItem = (id) => {
-        console.log('remove method')
+         const filtered = [...this.state.cart].filter(item=> item.id !== id)
+        this.setState({cart:filtered}) 
     }
     clearCart = () => {
         console.log('clear method')
     }
     
     render(){
+        console.log(this.state.cartSubtotal)
         return(
           <Context.Provider value={{
               ...this.state,

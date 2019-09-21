@@ -1,28 +1,35 @@
 import React from 'react'
 const CartItem = ({value,item}) => {
     const {id,title,img,price,total,count} = item;
-    const {increment,decrement, remove} = value;
+    const {increment,decrement, removeItem} = value;
     console.log(value)
     return(
-        <div className="row my-1 text-capitalize text-center">
+        <div className="row my-2 text-capitalize text-center">
             <div className="col-10 mx-auto col-lg-2">
                 <img src={img} style={{width:'5rem',height:'5rem'}} alt="product" className='img-fluid'/>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p className="text-uppercase">{title}</p>
+                <span className='d-lg-none'>Product:</span>{title}
             </div>
             <div className="col-10 mx-auto col-lg-2">
                 <p className="text-uppercase">{price}</p>
             </div>
-            <div className="col-10 mx-auto col-lg-2">
-                <button onClick={()=>increment(id)}>+</button>
-                <button onClick={()=>decrement(id)}>-</button>
+            <div className="col-10 mx-auto col-lg-2 my-2 my-lg-0">
+                <div className="d-flex justify-content-center">
+                    <div>
+                        <span className="btn btn-black mx-1" onClick={()=>decrement(id)} >-</span>
+                        <span className="btn btn-black mx-1">{count}</span>
+                        <span className="btn btn-black mx-1" onClick={()=>increment(id)} >+</span>
+                    </div>
+                </div>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <button>Remove</button>
+                <div className="cart-icon" onClick={()=>removeItem(id)}>
+                    <i className="fas fa-trash"></i>
+                </div>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p className="text-uppercase">total</p>
+               <strong>item total: $ {total}</strong>
             </div>
         </div>
     )
