@@ -1,5 +1,5 @@
 import React from 'react'
-function CartColumns(props) {
+const  CartColumns = (props)  => {
     return(
         <div className="container-fluid text-center d-none d-lg-block mt-3">
             <div className="row">

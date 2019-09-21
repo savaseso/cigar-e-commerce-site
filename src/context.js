@@ -7,7 +7,7 @@ export class Provider extends Component {
     state = {
         products:[],
         detailProduct,
-        cart:[],
+        cart:storeProducts,
         modalOpen:false,
         modalProduct:detailProduct,
         cartSubtotal:0,
@@ -50,10 +50,10 @@ export class Provider extends Component {
         this.setState({modalOpen:false})
     }
     increment = (id) => {
-        console.log('increment method')
+        console.log('increment method',id)
     }
     decrement = (id) => {
-        console.log('decrement method')
+        console.log('decrement method',id)
     }
     removeItem = (id) => {
         console.log('remove method')

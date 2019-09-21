@@ -1,5 +1,5 @@
 import React from 'react'
-function EmptyCart(props) {
+const EmptyCart = () => {
     return(
         <div className="container mt-5">
             <div className="row">
