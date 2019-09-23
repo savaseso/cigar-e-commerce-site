@@ -40,7 +40,7 @@ export class Provider extends Component {
         product.count = 1;
         const price = product.price;
         product.total = price;
-        this.setState({products:tempProducts,cart:[...this.state.cart,product]},()=>console.log(this.state))
+        this.setState({products:tempProducts,cart:[...this.state.cart,product]},()=>this.addTotals())
     }
     openModal = id => {
         const product = this.getItem(id);
@@ -62,6 +62,14 @@ export class Provider extends Component {
     }
     clearCart = () => {
         this.setState({cart:[]})
+    }
+    addTotals = () => {
+        let subTotal = 0;
+        this.state.cart.map(item=>(subTotal += item.total));
+        const tempTax = subTotal * 0.13;
+        const tax = parseFloat(tempTax.toFixed(2));
+        const total = subTotal + tax
+        this.setState({cartSubtotal:subTotal,cartTax:tax,cartTotal:total})
     }
     
     render(){
