@@ -61,7 +61,7 @@ export class Provider extends Component {
         this.setState({cart:filtered}) 
     }
     clearCart = () => {
-        console.log('clear method')
+        this.setState({cart:[]})
     }
     
     render(){
