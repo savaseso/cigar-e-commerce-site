@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Consumer } from '../context';
 import { Link } from 'react-router-dom';
 import { ButtonContainer } from './Button'
-class Details extends Component {
-    render() {
+const Details = () => {
         return (
             <Consumer>
                 {value => {
@@ -50,5 +49,4 @@ class Details extends Component {
             </Consumer>
         )
     }
-}
 export default Details

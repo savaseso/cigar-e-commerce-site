@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Consumer } from '../context';
 import { ButtonContainer } from './Button';
 import { Link } from 'react-router-dom';
 
-class Modal extends Component {
-    render() {
+const Modal = () => {
         return (
             <Consumer>
                 {value => {
@@ -33,7 +32,7 @@ class Modal extends Component {
             </Consumer>
         )
     }
-}
+    
 const ModalContainer = styled.div`
 position:fixed;
 top:0;

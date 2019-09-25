@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Product from './Product'
 import Title from './Title'
 import { Consumer } from '../context'
-class ProductList extends Component {
-    render(){
+const ProductList = () => {
         return(
             <Consumer>
                 {value => {
@@ -21,5 +20,4 @@ class ProductList extends Component {
             </Consumer>
         )
     }
-}
 export default ProductList

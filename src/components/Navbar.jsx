@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ButtonContainer } from './Button'
 import styled from 'styled-components'
 import logo from '../logo.svg'
 
-class Navbar extends Component {
-    render(){
+const Navbar = () => {
         return(
             <NavWrapper className="navbar navbar-expand-sm navbark-dark px-sm-5">
                 <Link to='/'><img src={logo} alt="store" className='navbar-brand'/></Link>
@@ -25,7 +24,7 @@ class Navbar extends Component {
             </NavWrapper>
         )
     }
-}
+
 const NavWrapper = styled.nav`
 background:var(--mainBlue);
 .nav-link{
