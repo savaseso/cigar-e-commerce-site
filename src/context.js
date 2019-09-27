@@ -98,7 +98,6 @@ export class Provider extends Component {
     }
 
     render() {
-        console.log(this.state.cartSubtotal)
         return (
             <Context.Provider value={{
                 ...this.state,
