@@ -12,9 +12,11 @@ const Product = (props) => {
                 <Consumer>
                     {value => {
                         return <div className="img-container p-5" onClick={() => value.handleDetail(id)}>
-                            <Link to='/details'>
-                                    <img  style={{width:'auto',height:'200px',objectFit:'cover'}} src={img} alt="productimage" className='card-img-top' />
+                            <div style={{height:'250px',width:'160px'}}>
+                                <Link to='/details'>
+                                <img style={{height:'100%', width:'100%',objectFit:'contain'}} src={img} alt="productimage" className='card-img-top' />
                             </Link>
+                            </div>
                             <button
                                 className="cart-btn"
                                 disabled={inCart ? true : false}
