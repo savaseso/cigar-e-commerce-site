@@ -2,7 +2,7 @@ import React from 'react';
 import Product from './Product'
 import Title from './Title'
 import { Consumer } from '../context'
-const ProductList = () => {
+const ProductList = (props) => {
         return(
             <Consumer>
                 {value => {
